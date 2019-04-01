@@ -13,15 +13,9 @@ class CreateArticlesTable extends Migration
      */
     public function up()
     {
-        Schema::create('articles', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('title');
-            $table->longText('body');
-            $table->string('cartegory');
-            $table->string('image_name');
-            $table->timestamps();
+        Schema::table('articles', function (Blueprint $table) {
+            $table->string('author')->after('title')->default('Frank Kelvin');
         });
-
     }
 
     /**
@@ -31,6 +25,8 @@ class CreateArticlesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('articles');
+        Schema::table('articles', function (Blueprint $table) {
+            //
+        });
     }
 }

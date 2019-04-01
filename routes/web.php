@@ -33,8 +33,10 @@ Route::group(['middleware' => ['auth']], function () {
 Auth::routes();
 
 Route::get('/', 'WelcomeController@index');
-Route::get('/cartegory/{id}','WelcomeController@cartegory')->name('cartegory');
+
+Route::get('/cartegories/{cartegory}','WelcomeController@cartegory')->name('cartegory');
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/post/{id}', 'WelcomeController@single')->name('single');
 
 Route::resource('cartegory', 'CartegoryController');
 Route::resource('article', 'ArticleController');
