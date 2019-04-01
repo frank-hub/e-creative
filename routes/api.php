@@ -13,7 +13,7 @@ use Illuminate\Http\Request;
 |
 */
 
-// Route::get('articles', '');
+Route::get('articles_api', 'API\ArticlesApiController@articles');
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
